@@ -72,7 +72,7 @@ public class Formulario01 extends JFrame {
 				}else{
 					precio= 15;
 				}
-				icantidad= Integer.parseInt(cantidad)
+				icantidad= Integer.parseInt(cantidad);
 
 				importeCompra = precio *icantidad; 
 				
@@ -80,22 +80,22 @@ public class Formulario01 extends JFrame {
 					descuento= 0.05*importeCompra;
 				}else if (icantidad>=11 && icantidad <21){
 					descuento = 0.075*importeCompra;
-				)else if (icantidad>=21 && icantidad<31){
+				}else if (icantidad>=21 && icantidad<31){
 					descuento = 0.1*importeCompra;
 				}else {
 					descuento= 0.125*importeCompra;
 				}
 				importePagar= importeCompra- descuento;
 
-				int caramelos = importePagar > 250 ? 
-						3*icantidad : 2*icantidad;
+				int caramelos = importePagar > 250 ?  3*icantidad : 2*icantidad;
 				
 				if (importePagar > 250){
-					caramelos=3*icantidad 
+					caramelos=3*icantidad;
 				}else{
-					caramelos=2*icantidad 
+					caramelos=2*icantidad;
 				}
-
+				
+				txtS.append("Obsequio Caramelos : " + caramelos);
 			
 			}
 		});
