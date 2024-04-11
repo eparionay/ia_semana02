@@ -74,7 +74,7 @@ public class Formulario01 extends JFrame {
 
 				importeCompra= icantidad*dprecio;
 
-				if (cantidad > 10){
+				if (icantidad > 10){
 					descuento = 0.15*importeCompra;
 				} else{
 					descuento = 0.05*importeCompra;
