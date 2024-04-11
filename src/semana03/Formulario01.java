@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Formulario01 extends JFrame {
 
@@ -59,6 +61,39 @@ public class Formulario01 extends JFrame {
 		txtCantidad.setColumns(10);
 		
 		JButton btnProcesar = new JButton("Procesar");
+		btnProcesar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double importeCompra, descuento, importePagar;
+				String regalo;
+
+				String cantidad = txtCantidad.getText();
+				String precio = txtPrecio.getText();
+
+				int icantidad = Integer.parseInt(cantidad);
+				double dprecio= Double.parseDouble(precio);
+
+				importeCompra= icantidad*dprecio;
+
+				if (cantidad > 10){
+					descuento = 0.15*importeCompra;
+				} else{
+					descuento = 0.05*importeCompra;
+				}
+
+				importePagar= importeCompra- descuento;
+				
+				if (importePagar > 200){
+					regalo = "Agenda";	
+				}else{
+					regalo = "Cuaderno";
+				}
+
+				txtS.append("Obsequio : " + regalo);
+
+			
+			
+			}
+		});
 		btnProcesar.setBounds(299, 26, 89, 23);
 		contentPane.add(btnProcesar);
 		
