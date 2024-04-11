@@ -121,6 +121,8 @@ public class Formulario03 extends JFrame {
 						    " Peso en Kilogramos : " + dpeso + "\n" +
 							" Importe Compra : " + importeCompra
 					
+							
+							
 						);
 				}
 		
