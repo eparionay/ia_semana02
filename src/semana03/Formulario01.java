@@ -59,52 +59,43 @@ public class Formulario01 extends JFrame {
 		JButton btnProcesar = new JButton("Procesar");
 		btnProcesar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				double importeCompra, descuento, importePagar;
-				String regalo;
-
+				int icantidad;
+				double descuento, importePagar;
+				String codigo = cboCodigo.getSelectedItem().toString();
 				String cantidad = txtCantidad.getText();
-				String precio = txtPrecio.getText();
+				double precio, importeCompra;
 
-				int icantidad = Integer.parseInt(cantidad);
-				double dprecio= Double.parseDouble(precio);
-
-				importeCompra= icantidad*dprecio;
-
-				if (icantidad > 10){
-					descuento = 0.15*importeCompra;
-				} else{
-					descuento = 0.05*importeCompra;
-				}
-
-				importePagar= importeCompra- descuento;
-				
-				if (importePagar > 200){
-					regalo = "Agenda";	
+				if (codigo.equals("101")){
+				    precio = 17.5;
+				}else if (codigo.equals("102")){
+					precio = 25;
 				}else{
-					regalo = "Cuaderno";
+					precio= 15;
+				}
+				icantidad= Integer.parseInt(cantidad)
+
+				importeCompra = precio *icantidad; 
+				
+				if (icantidad<11){
+					descuento= 0.05*importeCompra;
+				}else if (icantidad>=11 && icantidad <21){
+					descuento = 0.075*importeCompra;
+				)else if (icantidad>=21 && icantidad<31){
+					descuento = 0.1*importeCompra;
+				}else {
+					descuento= 0.125*importeCompra;
+				}
+				importePagar= importeCompra- descuento;
+
+				int caramelos = importePagar > 250 ? 
+						3*icantidad : 2*icantidad;
+				
+				if (importePagar > 250){
+					caramelos=3*icantidad 
+				}else{
+					caramelos=2*icantidad 
 				}
 
-				txtS.append("Obsequio : " + regalo);
-				/*
-				xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-				El nombre es : Juan
-				La edad es   : 20
-				El sueldo es : 2500
-				xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-				*/
-				String nombre= "Juan";
-				int edad = 20;
-				double sueldo = 2500;
-				String resultado;
-				resultado = "El nombre es : " + nombre + "\n" +
-							"La edad es   : " + edad   + "\n" +
-							"El sueldo es : " + sueldo;
-
-				txtS.append(resultado);
-
-
-
-			
 			
 			}
 		});
@@ -120,12 +111,17 @@ public class Formulario01 extends JFrame {
 		contentPane.add(txtS);
 		
 		txtCantidad = new JTextField();
-		txtCantidad.setBounds(87, 64, 86, 20);
+		txtCantidad.setBounds(87, 64, 130, 20);
 		contentPane.add(txtCantidad);
 		txtCantidad.setColumns(10);
 		
 		cboCodigo = new JComboBox();
 		cboCodigo.setBounds(87, 27, 130, 20);
 		contentPane.add(cboCodigo);
+
+		cboCodigo.addItem("100");
+		cboCodigo.addItem("101");
+		cboCodigo.addItem("102");
+		
 	}
 }
