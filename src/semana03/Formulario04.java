@@ -38,6 +38,7 @@ public class Formulario04 extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		//Esto es una prueba de gitpull
+		// esto es una prueba 2
 	}
 
 }
