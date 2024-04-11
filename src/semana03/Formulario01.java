@@ -59,6 +59,11 @@ public class Formulario01 extends JFrame {
 		JButton btnProcesar = new JButton("Procesar");
 		btnProcesar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				limpiar();
+			
+				
+				
 				int icantidad;
 				double descuento, importePagar;
 				String codigo = cboCodigo.getSelectedItem().toString();
@@ -103,6 +108,13 @@ public class Formulario01 extends JFrame {
 		contentPane.add(btnProcesar);
 		
 		JButton btnLimpiar = new JButton("Limpiar");
+		btnLimpiar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				limpiar();
+			
+			}
+		});
 		btnLimpiar.setBounds(299, 63, 89, 23);
 		contentPane.add(btnLimpiar);
 		
@@ -119,9 +131,17 @@ public class Formulario01 extends JFrame {
 		cboCodigo.setBounds(87, 27, 130, 20);
 		contentPane.add(cboCodigo);
 
+		cargarCombo();
+		
+	}
+	public void limpiar() {
+		cboCodigo.setSelectedIndex(0);
+		txtCantidad.setText("");
+		txtS.setText("");
+	}
+	public void cargarCombo() {
 		cboCodigo.addItem("100");
 		cboCodigo.addItem("101");
 		cboCodigo.addItem("102");
-		
 	}
 }

@@ -45,6 +45,8 @@ public class Formulario03 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
+	
 	public Formulario03() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -151,6 +153,8 @@ public class Formulario03 extends JFrame {
 		contentPane.add(txtS);
 	}
 	
+
+		
 	
 	public void mensaje(String mensaje) {
 		JOptionPane.showMessageDialog(null, mensaje);

@@ -41,4 +41,6 @@ public class Formulario04 extends JFrame {
 		// esto es una prueba 2
 	}
 
+	
+	
 }
